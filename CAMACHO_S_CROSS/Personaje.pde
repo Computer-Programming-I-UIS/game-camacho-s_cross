@@ -12,12 +12,12 @@ class Cam {
   }
 
   void display() {
-    x=(count%3)*ancho;
-    y=(count/3)*ancho;
+    x=(count%4)*ancho;
+    y=(count/4)*ancho;
 
     copy(moto, x, y, ancho, alto, x1, y1, ancho, alto);
     count++;
-    delay(300);
+    delay(50);
     if (count==3) {
       count=0;
     }
