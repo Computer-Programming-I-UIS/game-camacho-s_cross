@@ -2,7 +2,7 @@ cloud c;
 mount m;
 terreno t;
 Cam cam;
-PImage nubes, montana, terrenoN, moto;
+PImage nubes, montana, terrenoN, obst, moto;
   
 void setup() {
 
@@ -18,6 +18,8 @@ void setup() {
 
   moto=loadImage("moto8s.png");
   cam = new Cam(moto,20,250,170,160);
+  
+  obst=loadImage("snowman_.png");
 }
 void draw() {
   background(#4BBBFF);
@@ -25,5 +27,6 @@ void draw() {
   m.display();
   t.display();
   cam.display();
+  image(obst,200,280);
 
 }
