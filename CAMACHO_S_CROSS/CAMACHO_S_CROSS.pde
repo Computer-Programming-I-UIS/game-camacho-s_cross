@@ -2,7 +2,8 @@ cloud c;
 mount m;
 terreno t;
 Cam cam;
-PImage nubes, montana, terrenoN, obst, moto;
+PImage nubes, montana, terrenoN, obst, moto, jump;
+boolean salto;
   
 void setup() {
 
@@ -16,9 +17,10 @@ void setup() {
   terrenoN= loadImage("terrenonie.jpg");
   t = new terreno(terrenoN, 0);
 
-  moto=loadImage("moto8s.png");
+  moto=loadImage("moto4r.png");
   cam = new Cam(moto,20,250,170,160);
   
+  jump=loadImage("salto.png");
   obst=loadImage("snowman_.png");
 }
 void draw() {
