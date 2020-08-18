@@ -29,7 +29,6 @@ class Cam {
       if (y1-salto<150) {
         salto-=100;
       }
-      
     } else {
       x=(count%3)*ancho;
       y=(count/3)*ancho;
