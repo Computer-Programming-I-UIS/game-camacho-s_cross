@@ -1,27 +1,37 @@
+/* Juego Camacho´s Cross
+   Creado por: Sergio Angarita Camacho  2190441
+               Jesse Blair Camacho 
+   Descripción: Juego ligeramente basado en el dinosaurio offline de Google, el motociclista deberá 
+                saltar los muñecos de nieve para poder sobrevivir y asi alcanzar el mejor puntaje.*/
+                
+                /* JESSE POR AHORA PNGAMOS AQUI LAS REFERENCIAS DE LAS IMAGENES
+                   clasificacion, https://videojuegos.fandom.com/es/wiki/Entertainment_Software_Rating_Board
+                   fondo, https://www.10wallpaper.com/es/view/Forest_Winter_Snow_Mountains_Pine_Tree.html
+                   snowman, https://www.cleanpng.com/png-snowman-christmas-trolls-animaatio-clip-art-sam-ha-4001147/ autor: Cisily
+                   Montañas, http://www.andinoclubpamir.cl/cropped-montanas-png/  autor: Posted by Carlos A. Gatica V.
+                   nubes,
+                   terreno,
+                */
+
 cloud c;
 mount m;
 terreno t;
 Cam cam;
-Botones [] btn = new Botones[3];
-color []col= new color [3];
+Obst ob ;
+Botones btn1, btn2, btn3;
 color b1, b2, b3;
 int b=0;
 int ancho, alto;
 PFont fuente;
-PImage menu, fondo; 
-color n1=255,n2=255,n3=255;
-
+PImage menu, fondo, cla; 
+color n1,n2,n3;
 PImage nubes, montana, terrenoN, obst, moto, jump;
 boolean salto,play;
-Obst ob ;
 float[] x = new float [1000];
 
 
 
 void setup() {
-col[0]=b1;
-col[1]=b2;
-col[2]=b3;
   size(1000, 500);
   nubes =loadImage("nube3.png");
   c = new cloud(nubes, 0);
@@ -36,6 +46,8 @@ col[2]=b3;
   cam = new Cam(moto, 20, 250, 170, 160);
 
   jump=loadImage("salto.png");
+  
+  cla=loadImage("clasificacion.png");
 
   obst=loadImage("snowman_.png");
   ob = new Obst(obst, 280);
@@ -43,11 +55,10 @@ col[2]=b3;
     textFont(fuente);
     menu =loadImage("menu.png");
     fondo =loadImage("fondo.jpg");
-    for (int i=0; i<3; i++) {    //for para dibujar los botones
-    b +=130;
-    btn [i] = new Botones(650, b,250, 70, 5,col[i]);
+    btn1 = new Botones(650,135,250, 70, 5);
+    btn2 = new Botones(650,265,250, 70, 5);
+    btn3 = new Botones(650,395,250, 70, 5);
     
-  }
 }
 void draw() {
   background(#4BBBFF);
@@ -61,26 +72,20 @@ void draw() {
   }
   
   else{
-    image(fondo, 0, 0);
+  image(fondo, 0, 0);
   image(menu, -50, -70);
+  image(cla, 10, 400);
   fill(0);
-  textSize(50);
-  text("Camacho´s Game",580,70);
-  for (int i = 0; i<btn.length; i++) {    //for para llamar los metodos de la clase de Botones
-    btn [i].display();
-  }  
-  fill(n1);
-  textSize(30);
-  text("Start", 740, 173);
-  fill(n2);
-  text("Sound", 740, 303);
-  fill(n3);
-  text("Options", 740, 435);
+  textSize(80);
+  text("Camacross",600,70);  
+  btn1.display();
+  btn2.display();
+  btn3.display();
   }
 }
 
 void mouseClicked(){
- if((mouseX>btn[0].x) && (mouseX<btn[0].x+250) && (mouseY>btn[0].y) && (mouseY<btn[0].y+70)){
+ if((mouseX>btn1.x) && (mouseX<btn1.x+250) && (mouseY>btn1.y) && (mouseY<btn1.y+70)){
    play=true;
  }
 }
