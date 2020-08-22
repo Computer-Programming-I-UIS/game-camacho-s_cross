@@ -27,14 +27,21 @@ class Cam {
       if (count==3) {
         count=0;
       }
-      if (y1-salto<150) {
-        salto=100;
+      if (y1-salto<250) {
+        salto=150;
 
       }
     } else {
       x=(count%3)*ancho;
       y=(count/3)*ancho;
-        
+       if (y1-salto<250) {
+        salto=0;
+
+      }
+
+       
+
+      
 
       copy(moto, x, y, ancho, alto, x1, y1, ancho, alto);
       count++;
