@@ -40,7 +40,7 @@ class Botones {
   void Player() {  
     color m=255;
     fill(m);
-    //rect(x, y, ancho, alto, borde);
+    rect(x, y, ancho, alto, borde);
     fill(n2);
     text("Opciones", 735, 303);
       if ((mouseX>btn2.x) && (mouseX<btn2.x+ancho) && (mouseY>btn2.y) && (mouseY<btn2.y+alto)  ) {
@@ -57,10 +57,10 @@ class Botones {
     fill(n3);
     text("Crédtos", 740, 435);
       if ((mouseX>btn3.x) && (mouseX<btn3.x+ancho) && (mouseY>btn3.y) && (mouseY<btn3.y+alto)  ) {
-        //b3=255;
+        b3=255;
         n3=0;
       } else {
-        //b3=0;
+        b3=0;
         n3=255;
       }
   }

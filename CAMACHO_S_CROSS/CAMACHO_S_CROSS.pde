@@ -4,7 +4,7 @@
    Descripción: Juego ligeramente basado en el dinosaurio offline de Google, el motociclista deberá 
                 saltar los muñecos de nieve para poder sobrevivir y asi alcanzar el mejor puntaje.*/
                 
-                /* JESSE POR AHORA PNGAMOS AQUI LAS REFERENCIAS DE LAS IMAGENES
+                /* JESSE POR AHORA PONGAMOS AQUI LAS REFERENCIAS DE LAS IMAGENES
                    clasificacion, https://videojuegos.fandom.com/es/wiki/Entertainment_Software_Rating_Board
                    fondo, https://www.10wallpaper.com/es/view/Forest_Winter_Snow_Mountains_Pine_Tree.html
                    snowman, https://www.cleanpng.com/png-snowman-christmas-trolls-animaatio-clip-art-sam-ha-4001147/ autor: Cisily
@@ -20,11 +20,11 @@ Cam cam;
 Obst ob ;
 Botones btn1, btn2, btn3;
 color b1, b2, b3;
-int b=0;
+int b=0, opcion;
 int ancho, alto;
 PFont fuente;
 PImage menu, fondo, cla; 
-color n1,n2,n3;
+color n1,n2,n3,l;
 PImage nubes, montana, terrenoN, obst, moto, jump;
 boolean salto,play;
 float[] x = new float [1000];
@@ -62,16 +62,8 @@ void setup() {
 }
 void draw() {
   background(#4BBBFF);
-  if(play==true){
-  c.display();
-  m.display();
-  t.display();
-  cam.display();
-  ob.display();
-
-  }
-  
-  else{
+  switch (opcion){
+  case 0: 
   image(fondo, 0, 0);
   image(menu, -50, -70);
   image(cla, 10, 400);
@@ -81,11 +73,34 @@ void draw() {
   btn1.display();
   btn2.display();
   btn3.display();
+  break;
+  case 1:
+  c.display();
+  m.display();
+  t.display();
+  cam.display();
+  ob.display();
+  break;
+  case 2:
+  opciones();
+  break;
+  case 3:
+  creditos();
+  break;
   }
 }
 
 void mouseClicked(){
  if((mouseX>btn1.x) && (mouseX<btn1.x+250) && (mouseY>btn1.y) && (mouseY<btn1.y+70)){
-   play=true;
+   opcion = 1;
+ }
+ if((mouseX>btn2.x) && (mouseX<btn2.x+250) && (mouseY>btn2.y) && (mouseY<btn2.y+70)){
+   opcion = 2;
+ }
+ if((mouseX>btn3.x) && (mouseX<btn3.x+250) && (mouseY>btn3.y) && (mouseY<btn3.y+70)){
+   opcion = 3;
+ }
+ if((mouseX>10) && (mouseX<10+100) && (mouseY>430) && (mouseY<430+50)){
+   opcion = 0;
  }
 }
