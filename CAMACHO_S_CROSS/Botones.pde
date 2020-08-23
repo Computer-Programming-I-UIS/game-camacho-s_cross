@@ -18,6 +18,9 @@ void Start() {
     b1=0;
     n1=255;
   }
+  if ((mouseX>650)& (mouseX<900) && (mouseY>135) && (mouseY<205) && (mousePressed==true)) {
+    opcion = 1;
+  }
 }
 void sonido() {  
   fill(b2, 160);
@@ -31,6 +34,9 @@ void sonido() {
     b2=0;
     n2=255;
   }
+  if ((mouseX>650) && (mouseX<900) && (mouseY>265) && (mouseY<335) && (mousePressed==true)) {
+    opcion = 2;
+  }
 }
 void Opciones() {    
   fill(b3, 160);
@@ -43,5 +49,8 @@ void Opciones() {
   } else {
     b3=0;
     n3=255;
+  }
+  if ((mouseX>650) && (mouseX<900) && (mouseY>395) && (mouseY<465) && (mousePressed==true)) {
+    opcion = 3;
   }
 }

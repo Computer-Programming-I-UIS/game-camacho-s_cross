@@ -18,7 +18,7 @@ class Obst {
         println(cam.y1);
       }
       if ((((y<=(cam.y1)+cam.alto-50 ))&& (cam.x1 >=E+x[i]+width+60-cam.ancho) && (cam.x1 <= (E+x[i]+width)+cam.ancho-100))) {
-        opcion=0;
+        opcion=4;
       }
       else if (E+x[i]+width==0){
      puntaje = (puntaje+1);

@@ -1,6 +1,6 @@
 void puntaje() {
   fill(0);      //marcador del jugador 1 
   textSize(30);
-  text("puntaje:", 10, 20);     
-   text(nf(puntaje, 2), 110, 22);
- }
+  text("Puntaje:", 15, 25);     
+  text(nf(puntaje, 2), 130, 25);
+}

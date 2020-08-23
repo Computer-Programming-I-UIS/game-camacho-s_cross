@@ -20,12 +20,12 @@ class Cam {
     if (keyPressed == true &&  key==CODED && keyCode == UP && y1==250)// && y1+160==445) //
     {      
       control=1;
-      salto=20;
+      salto=17;
     }
      if(control==1 && y1<=250){ 
       //Sprites
       image(jump, x1, y1);
-      delay(30);
+      delay(5);
 
       
       //Salto
@@ -44,7 +44,7 @@ class Cam {
       }
       copy(moto, x, y, ancho, alto, x1, y1, ancho, alto);
       count++;
-      delay(50);
+      delay(40);
       if (count==3) {
         count=0;
       }

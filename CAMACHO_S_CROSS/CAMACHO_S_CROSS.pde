@@ -18,14 +18,17 @@ mount m;
 terreno t;
 Cam cam;
 Obst ob ;
+import ddf.minim.*;
+Minim minim;
+AudioPlayer audmenu, audjuego, audperder;
 int b=0, opcion, opc;
 int ancho, alto, control=0;
 PFont fuente;
-PImage menu, fondo, cla, sonido, sn1, sn2; 
+PImage menu, fondo, cla, sonido, sn1, sn2, fondo2; 
 PImage nubes, montana, terrenoN, obst, moto, jump;
-color n1, n2, n3,l;
+color n1, n2, n3, l;
 color b1, b2, b3;
-boolean salto, play;
+boolean salto, play, sonid=true;
 float[] x = new float [1000];
 int puntaje = 0;
 
@@ -33,8 +36,11 @@ int puntaje = 0;
 
 void setup() {
   size(1000, 500);
+  minim = new Minim(this);
+  audmenu = minim.loadFile("menu.wav");
+  audjuego = minim.loadFile("juego.wav");
+  audperder = minim.loadFile("perder.wav");
 
-  
   nubes =loadImage("nube3.png");
   c = new cloud(nubes, 0);
 
@@ -50,7 +56,7 @@ void setup() {
   jump=loadImage("salto.png");
 
   cla=loadImage("clasificacion.png");
-  
+
   sn1=loadImage("sn1.png");
   sn2=loadImage("sn2.png");
 
@@ -60,6 +66,7 @@ void setup() {
   textFont(fuente);
   menu =loadImage("menu.png");
   fondo =loadImage("fondo.jpg");
+  fondo2 =loadImage("fondo2.jpg");
 }
 void draw() {
   background(#4BBBFF);
@@ -71,7 +78,8 @@ void draw() {
     fill(0);
     textSize(80);
     text("Camacross", 600, 70);
-    botones();
+    botones(); 
+    audmenu.play();
     break;
   case 1:
     c.display();
@@ -80,6 +88,8 @@ void draw() {
     cam.display();
     ob.display();
     puntaje();
+    audjuego.play();
+    audmenu.pause();
     break;
   case 2:
     Sonido();
@@ -87,20 +97,10 @@ void draw() {
   case 3:
     opciones();
     break;
-  }
-}
-
-void mouseClicked() {
-  if ((mouseX>650)& (mouseX<900) && (mouseY>135) && (mouseY<205)) {
-    opcion = 1;
-  }
-  if ((mouseX>650) && (mouseX<900) && (mouseY>265) && (mouseY<335)) {
-    opcion = 2;
-  }
-  if ((mouseX>650) && (mouseX<900) && (mouseY>395) && (mouseY<465)) {
-    opcion = 3;
-  }
-  if ((mouseX>10) && (mouseX<10+100) && (mouseY>430) && (mouseY<430+50)) {
-    opcion = 0;
+  case 4:
+    perder();
+    audjuego.pause();
+    audperder.play();
+    break;
   }
 }
