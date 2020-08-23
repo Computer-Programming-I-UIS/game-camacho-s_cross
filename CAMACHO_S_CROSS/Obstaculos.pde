@@ -2,7 +2,7 @@ class Obst {
 
   PImage obst;
   float  y;
-  float[] x = new float [1000];
+  float[] x = new float [1500];
 
   Obst(PImage _obst, int _y) {
     obst = _obst;
@@ -12,12 +12,12 @@ class Obst {
   void display() {
     for (int i = 0; i < x.length; i++) {     
       x[i] -= 20;
-      float E = 600*i;
+      float E = 1000*i;
       image(obst, E+x[i]+width, y);
-      if (cam.y1-cam.salto != 0) {
-        println(cam.y1-cam.salto);
+      if (cam.y1 != 0) {
+        println(cam.y1);
       }
-      if (((x[i]+width+80)<= cam.x1+cam.ancho)&&(y >= (cam.y1-cam.salto))&&(y <= (cam.y1-cam.salto)+cam.alto)) {
+      if ((((y<=(cam.y1)+cam.alto-50 ))&& (cam.x1 >=E+x[i]+width+60-cam.ancho) && (cam.x1 <= (E+x[i]+width)+cam.ancho-100))) {
         opcion=0;
       }
     }

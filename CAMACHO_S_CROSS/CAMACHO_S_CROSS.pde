@@ -75,7 +75,7 @@ void draw() {
     m.display();
     t.display();
     cam.display();
-    //ob.display();
+    ob.display();
     break;
   case 2:
     Sonido();
