@@ -9,8 +9,8 @@
  fondo, https://www.10wallpaper.com/es/view/Forest_Winter_Snow_Mountains_Pine_Tree.html
  snowman, https://www.cleanpng.com/png-snowman-christmas-trolls-animaatio-clip-art-sam-ha-4001147/ autor: Cisily
  Montañas, http://www.andinoclubpamir.cl/cropped-montanas-png/  autor: Posted by Carlos A. Gatica V.
- nubes,
- terreno,
+ nubes,https://www.stickpng.com/es/img/naturaleza/nubes/pequena-nube-individual
+ terreno,https://www.pngegg.com/en/png-niopa
  */
 
 cloud c;
@@ -27,11 +27,14 @@ color n1, n2, n3,l;
 color b1, b2, b3;
 boolean salto, play;
 float[] x = new float [1000];
+int puntaje = 0;
 
 
 
 void setup() {
   size(1000, 500);
+
+  
   nubes =loadImage("nube3.png");
   c = new cloud(nubes, 0);
 
@@ -67,7 +70,7 @@ void draw() {
     image(cla, 10, 400);
     fill(0);
     textSize(80);
-    text("Camacross", 600, 70);  
+    text("Camacross", 600, 70);
     botones();
     break;
   case 1:
@@ -76,6 +79,7 @@ void draw() {
     t.display();
     cam.display();
     ob.display();
+    puntaje();
     break;
   case 2:
     Sonido();
