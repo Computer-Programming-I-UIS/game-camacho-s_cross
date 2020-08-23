@@ -16,33 +16,32 @@ class Cam {
     movimiento();
   }
   void movimiento() {  
-
-    if (keyPressed && keyCode==UP ) {      
-      x=(count%3)*ancho;
-      y=(count/3)*ancho;
-      copy(jump, x, y, ancho, alto, x1, y1-salto, ancho, alto);
-      count++;
-      salto+=20;
-      delay(50);
-      if (count==3) {
-        count=0;
-      }
-      if (y1-salto<250) {
-        salto=150;
-
-      }
-    } else {
-      x=(count%3)*ancho;
-      y=(count/3)*ancho;
-       if (y1-salto<250) {
-        salto=0;
-
-      }
-
-       
+     
+    if (keyPressed == true &&  key==CODED && keyCode == UP && y1==250)// && y1+160==445) //
+    {      
+      control=1;
+      salto=20;
+    }
+     if(control==1 && y1<=250){ 
+      //Sprites
+      image(jump, x1, y1);
+      delay(30);
 
       
-
+      //Salto
+      y1-=salto;
+      salto-=1;
+     }else {  //Manejo
+      x=(count%3)*ancho;
+      y=(count/3)*ancho;
+      if (y1-salto<250) {
+        salto=0;
+      }
+      if(y1>250){
+        salto=0;
+       y1=250;
+       control=0;
+      }
       copy(moto, x, y, ancho, alto, x1, y1, ancho, alto);
       count++;
       delay(50);

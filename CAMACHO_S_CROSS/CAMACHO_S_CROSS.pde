@@ -19,7 +19,7 @@ terreno t;
 Cam cam;
 Obst ob ;
 int b=0, opcion, opc;
-int ancho, alto;
+int ancho, alto, control=0;
 PFont fuente;
 PImage menu, fondo, cla, sonido, sn1, sn2; 
 PImage nubes, montana, terrenoN, obst, moto, jump;
@@ -75,7 +75,7 @@ void draw() {
     m.display();
     t.display();
     cam.display();
-    ob.display();
+    //ob.display();
     break;
   case 2:
     Sonido();
