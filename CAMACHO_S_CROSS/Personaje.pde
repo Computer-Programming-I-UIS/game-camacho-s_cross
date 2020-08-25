@@ -1,10 +1,10 @@
 class Cam {//clase para la moto
- //atributos
+  //atributos
   PImage moto;
   //
   int ancho=170, alto=160, x, y, x1, y1, count, salto=10;
 
-//constructor
+  //constructor
   Cam(PImage _moto, int _x1, int _y1, int _ancho, int _alto) {
     moto=_moto;
     x1=_x1; 
@@ -12,10 +12,11 @@ class Cam {//clase para la moto
     ancho=_ancho;
     alto=_alto;
   }
-//metodos
+  //metodos
   void display() {
     movimiento();
   }
+  //Control del salto(físico y audio)
   void movimiento() {  
     boolean saltando = keyPressed == true &&  key==CODED && keyCode == UP && y1==250;
     if (saltando)
@@ -25,23 +26,22 @@ class Cam {//clase para la moto
       if (audsalto.isPlaying()) {
         audsalto.rewind();
       } else {
-        audsalto.rewind();
+        audsalto.rewind(); //reproduce el audio cada vez que el jugador salta
         audsalto.play();
       }
       puntaje+=1;
     }
+    //control de la opcion de bajar mientras esta en el aire
     boolean bajar = keyPressed == true &&  key==CODED && keyCode == DOWN;
     if (bajar)
     {
       y1=250;
     }
-
+    //sprite para andar
     if (control==1 && y1<=250) { 
       //Sprites
       image(jump, x1, y1);
       delay(5);
-
-
       //Salto
       y1-=salto;
       salto-=1;

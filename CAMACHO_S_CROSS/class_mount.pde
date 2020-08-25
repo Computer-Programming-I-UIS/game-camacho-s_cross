@@ -1,5 +1,5 @@
 class mount {//clase para las montañas
-//atributos
+  //atributos
   float y; //coordenada en y
   int x=0, x2=width;//coordenada en x
   float v=5;//velocidad

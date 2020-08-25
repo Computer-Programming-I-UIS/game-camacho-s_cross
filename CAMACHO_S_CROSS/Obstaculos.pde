@@ -41,7 +41,7 @@ class Obst { //clase para los obstaculos
     //if ((x<=20 && x>=0) || (x1<=20 && x1>=0)) {
     //  puntaje+=1;
     //}
-    
+
     //condicion para que aumente la velocidad cada vez que el puntaje sea de 10 en 10
     if ( puntaje %10 == 0 && puntaje != 0) {
       c.v+=0.3; //velocidad nube aumenta
