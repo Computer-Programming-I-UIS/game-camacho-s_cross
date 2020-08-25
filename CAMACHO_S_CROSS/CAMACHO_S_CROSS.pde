@@ -20,7 +20,7 @@ Cam cam;
 Obst ob ;
 import ddf.minim.*;
 Minim minim;
-AudioPlayer audmenu, audjuego, audperder;
+AudioPlayer audmenu, audjuego, audperder, audsalto;
 int b=0, opcion, opc;
 int ancho, alto, control=0;
 PFont fuente;
@@ -42,6 +42,7 @@ void setup() {
   audmenu = minim.loadFile("menu.wav");
   audjuego = minim.loadFile("juego.wav");
   audperder = minim.loadFile("perder.wav");
+  audsalto = minim.loadFile("salto.wav");
 
 
   nubes =loadImage("nube3.png");

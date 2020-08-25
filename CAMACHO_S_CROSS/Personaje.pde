@@ -21,7 +21,11 @@ class Cam {
     {      
       control=1;
       salto=17;
+
       puntaje = (puntaje+1);
+
+      audsalto.play();
+
     }
     if (control==1 && y1<=250) { 
       //Sprites

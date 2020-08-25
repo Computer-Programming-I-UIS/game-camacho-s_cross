@@ -29,8 +29,8 @@ class Obst {
         setup();
       }
       //VELOCIDAD
-      if ( puntaje %2 ==0 && puntaje != 0) {
-        c.v=8;
+      if ( puntaje %2 == 0 && puntaje != 0) {
+        c.v=6;
         t.v=11;
         m.v=8;
         x[i]-=15;
