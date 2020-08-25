@@ -14,7 +14,7 @@ class terreno {
   }
   void display() {
 
-     x = v*frameCount % width+terrenoN.width;
+    x = v*frameCount % width+terrenoN.width;
     image(terrenoN, -x+width-396, y+285, width, height/2.1);
     image(terrenoN, -x+width+600, y+285, width, height/2.1);
   }

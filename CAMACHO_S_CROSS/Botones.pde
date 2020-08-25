@@ -1,7 +1,7 @@
 void botones() {  
   Start();
   sonido();
-  Opciones();
+  opciones();
 }
 
 void Start() {      
@@ -38,7 +38,7 @@ void sonido() {
     opcion = 2;
   }
 }
-void Opciones() {    
+void opciones() {    
   fill(b3, 160);
   rect(650, 395, 250, 70, 5);
   fill(n3);

@@ -4,15 +4,6 @@
  Descripción: Juego ligeramente basado en el dinosaurio offline de Google, el motociclista deberá 
  saltar los muñecos de nieve para poder sobrevivir y asi alcanzar el mejor puntaje.*/
 
-/* JESSE POR AHORA PONGAMOS AQUI LAS REFERENCIAS DE LAS IMAGENES
- clasificacion, https://videojuegos.fandom.com/es/wiki/Entertainment_Software_Rating_Board
- fondo, https://www.10wallpaper.com/es/view/Forest_Winter_Snow_Mountains_Pine_Tree.html
- snowman, https://www.cleanpng.com/png-snowman-christmas-trolls-animaatio-clip-art-sam-ha-4001147/ autor: Cisily
- Montañas, http://www.andinoclubpamir.cl/cropped-montanas-png/  autor: Posted by Carlos A. Gatica V.
- nubes,https://www.stickpng.com/es/img/naturaleza/nubes/pequena-nube-individual
- terreno,https://www.pngegg.com/en/png-niopa
- */
-
 cloud c;
 mount m;
 terreno t;
@@ -33,8 +24,6 @@ float[] x = new float [1000];
 int puntaje;
 int puntaje_max=0;
 
-
-
 void setup() {
   size(1000, 500);
   puntaje = 0;
@@ -43,7 +32,6 @@ void setup() {
   audjuego = minim.loadFile("juego.wav");
   audperder = minim.loadFile("perder.wav");
   audsalto = minim.loadFile("salto.wav");
-
 
   nubes =loadImage("nube3.png");
   c = new cloud(nubes, 0);
@@ -66,8 +54,10 @@ void setup() {
 
   obst=loadImage("snowman_.png");
   ob = new Obst(obst, 280);
+  
   fuente=loadFont("Harlow.vlw");
   textFont(fuente);
+  
   menu =loadImage("menu.png");
   fondo =loadImage("fondo.jpg");
   fondo2 =loadImage("fondo2.jpg");
@@ -102,7 +92,7 @@ void draw() {
     Sonido();
     break;
   case 3:
-    opciones();
+    options();
     break;
   case 4:
     perder();

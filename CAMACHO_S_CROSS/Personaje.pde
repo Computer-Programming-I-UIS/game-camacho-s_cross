@@ -16,16 +16,17 @@ class Cam {
     movimiento();
   }
   void movimiento() {  
-
-    if (keyPressed == true &&  key==CODED && keyCode == UP && y1==250)// && y1+160==445) //
+    boolean saltando = keyPressed == true &&  key==CODED && keyCode == UP && y1==250;
+    if (saltando)
     {      
       control=1;
       salto=17;
-
-      puntaje = (puntaje+1);
-
-      audsalto.play();
-
+      if (audsalto.isPlaying()) {
+        audsalto.rewind();
+      } else {
+        audsalto.rewind();
+        audsalto.play();
+      }
     }
     if (control==1 && y1<=250) { 
       //Sprites
