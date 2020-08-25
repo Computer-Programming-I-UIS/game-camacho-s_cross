@@ -1,17 +1,18 @@
-class Cam {
-
+class Cam {//clase para la moto
+ //atributos
   PImage moto;
+  //
   int ancho=170, alto=160, x, y, x1, y1, count, salto=10;
 
-
+//constructor
   Cam(PImage _moto, int _x1, int _y1, int _ancho, int _alto) {
     moto=_moto;
-    x1=_x1;
+    x1=_x1; 
     y1=_y1;
     ancho=_ancho;
     alto=_alto;
   }
-
+//metodos
   void display() {
     movimiento();
   }
@@ -27,7 +28,14 @@ class Cam {
         audsalto.rewind();
         audsalto.play();
       }
+      puntaje+=1;
     }
+    boolean bajar = keyPressed == true &&  key==CODED && keyCode == DOWN;
+    if (bajar)
+    {
+      y1=250;
+    }
+
     if (control==1 && y1<=250) { 
       //Sprites
       image(jump, x1, y1);

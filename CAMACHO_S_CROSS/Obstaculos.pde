@@ -1,42 +1,53 @@
-class Obst {
+class Obst { //clase para los obstaculos
+  //atributos
+  PImage obst; //variable de imagen de obstaculos
+  int  y;//coordenada y
+  int E =1000;//espacio entre la posicion inicial de los obbstaculos
+  int x = width;//coordenada x del primer obstaculo
+  int x1 = width+E;//coordenada x del segundo obstaculo
+  float v =17;//velocidad de los obstaculos
+  int ancho, alto;//ancho y alto de obstaculos
 
-  PImage obst;
-  float  y;
-  float[] x = new float [1500];
-  float E;
-  float xpos;
-  float test;
-  float v = 20 ;
-  Obst(PImage _obst, int _y) {
+  //constructor
+  Obst(PImage _obst, int _y, int _ancho, int _alto) {
     obst = _obst;
-    //x = _x;
     y =_y;
+    ancho=_ancho;
+    alto=_alto;
   }
+  //metodo
   void display() {
-    for (int i = 0; i < x.length; i++) { 
+    //direccion movimiento de obstaculos
+    x -= v; 
+    x1 -=v;
+    //dibujar los obstaculos
+    image(obst, x, y, ancho, alto);  
+    image(obst, x1, y, ancho, alto);
+    //condicion para que se repitan los obstaculos cuando llegan a cero en posiciones random
+    if ( x+ancho<=  0) {
+      x =int(random(width, 2*width));
+    } else if (x1+ancho <=0) {
+      x1=int(random(width, 2*width));
+    }
+    //condicion para las colisiones 
+    if ((((y<=(cam.y1)+cam.alto-50 ))&& (((cam.x1 >=x+85-cam.ancho) && (cam.x1 <= (x)+cam.ancho-119)) ||((cam.x1 >=x1+85-cam.ancho) && (cam.x1 <= (x1)+cam.ancho-119))))) {
+      puntaje-=1;//puntaje disminuye
+      opcion=4;//sucede el caso 4
+      audjuego.pause();//audio del juego pausa
 
-      x[i] -= v;
-      E = 1000*i;
-      xpos = E+x[i]+width;
-      image(obst, xpos, y);
-
-      if ((((y<=(cam.y1)+cam.alto-50 ))&& (cam.x1 >=xpos+60-cam.ancho) && (cam.x1 <= (xpos)+cam.ancho-100))) {
-
-        opcion=4;
-
-        audjuego.pause();
-        if (puntaje > puntaje_max) puntaje_max = puntaje;
-        setup();
-      }
-      //VELOCIDAD
-      if ( puntaje %2 == 0 && puntaje != 0) {
-        c.v=6;
-        t.v=11;
-        m.v=8;
-        x[i]-=15;
-        //  //puntaje = (puntaje+1);
-      }
-      println(cam.y1+cam.ancho);
+      if (puntaje > puntaje_max) puntaje_max = puntaje;//condicion para que se guarde el mayor puntaje
+      setup();//reinicia juego
+    }
+    //if ((x<=20 && x>=0) || (x1<=20 && x1>=0)) {
+    //  puntaje+=1;
+    //}
+    
+    //condicion para que aumente la velocidad cada vez que el puntaje sea de 10 en 10
+    if ( puntaje %10 == 0 && puntaje != 0) {
+      c.v+=0.3; //velocidad nube aumenta
+      t.v=50;//velocidad terreno aumenta
+      m.v+=0.1;//velocidad montaña aumenta
+      v+=0.2;//velocidad obstaculo aumenta
     }
   }
 }
