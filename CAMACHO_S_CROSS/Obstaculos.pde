@@ -28,7 +28,7 @@ class Obst {
         if (puntaje > puntaje_max) puntaje_max = puntaje;
         setup();
       }
-
+      //VELOCIDAD
       if ( puntaje %2 ==0 && puntaje != 0) {
         c.v=8;
         t.v=11;
