@@ -30,16 +30,19 @@ color n1, n2, n3, l;
 color b1, b2, b3;
 boolean salto, play, sonid=true;
 float[] x = new float [1000];
-int puntaje = 0;
+int puntaje;
+int puntaje_max=0;
 
 
 
 void setup() {
   size(1000, 500);
+  puntaje = 0;
   minim = new Minim(this);
   audmenu = minim.loadFile("menu.wav");
   audjuego = minim.loadFile("juego.wav");
   audperder = minim.loadFile("perder.wav");
+
 
   nubes =loadImage("nube3.png");
   c = new cloud(nubes, 0);
@@ -70,6 +73,7 @@ void setup() {
 }
 void draw() {
   background(#4BBBFF);
+
   switch (opcion) {
   case 0: 
     image(fondo, 0, 0);
@@ -82,6 +86,8 @@ void draw() {
     audmenu.play();
     break;
   case 1:
+    text("Puntaje max:", width-200, 100);
+    text(puntaje_max, width-100, 100);
     c.display();
     m.display();
     t.display();

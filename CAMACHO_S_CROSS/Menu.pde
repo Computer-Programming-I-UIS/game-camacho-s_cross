@@ -2,9 +2,9 @@ void Sonido() {
   fill(0);
   textSize(80);
   text("Sonido", 250, 140); 
-  if(sonid==true){
+  if (sonid==true) {
     image(sn1, 500, 100);
-  }else{
+  } else {
     image(sn2, 500, 100);
   }
 
@@ -81,9 +81,13 @@ void perder() {
     b1=0;
     n1=255;
   }
+
+
   if ((mouseX>80) && (mouseX<80+140) && (mouseY>165) && (mouseY<165+60) && (mousePressed==true)) {
+
     opcion = 1;
   }
+
   fill(b2, 160);
   rect(80, 285, 140, 60, 5);
   textSize(30);
