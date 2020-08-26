@@ -17,7 +17,8 @@ Una aventura sin fin que se va complicando a medida que Camacross avanza en su t
 ### Características
  
 - Juego tipo sin fin. 
+- A medida que se avanza el juego aumenta su dificultad.
 - Manual interactivo de controles del juego.
-- Opciones de jugabilidad con o sin música y esfectos. 
-- Referencias para los elementos no propios empleados en el juego.
+- Opciones de jugabilidad con o sin música y efectos. 
+
 
