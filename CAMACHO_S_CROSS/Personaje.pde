@@ -23,12 +23,16 @@ class Cam {//clase para la moto
     {      
       control=1;
       salto=17;
+      if (efectos==true) {
       if (audsalto.isPlaying()) {
         audsalto.rewind();
       } else {
         audsalto.rewind(); //reproduce el audio cada vez que el jugador salta
         audsalto.play();
       }
+    } if (efectos==false){
+      audsalto.pause();
+    }
       puntaje+=1;
     }
     //control de la opcion de bajar mientras esta en el aire

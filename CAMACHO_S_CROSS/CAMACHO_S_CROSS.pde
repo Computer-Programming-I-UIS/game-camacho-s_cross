@@ -21,7 +21,7 @@ PImage menu, fondo, cla, sonido, sn1, sn2, fondo2;//imagenes de cada una de los 
 PImage nubes, montana, terrenoN, obst, moto, jump;//imagenes de los objetos 
 color n1, n2, n3, l;
 color b1, b2, b3;
-boolean salto, play, sonid=true;
+boolean salto, play, musica=true, efectos=true;
 int puntaje;//puntaje
 int puntaje_max=0; //puntaje maximo
 
@@ -76,7 +76,7 @@ void draw() {
     textSize(80);
     text("Camacross", 600, 70);
     botones(); 
-    if (sonid==true) {
+    if (musica==true) {
       audmenu.play();
     } else {
       audmenu.pause();
@@ -92,14 +92,17 @@ void draw() {
     puntaje();
     audjuego.play();
     audmenu.pause();
+    if(musica==false){
+      audjuego.pause();
+    }
     break;
     //opciones de sonido
   case 2:
     Sonido();
-    if (sonid==true) {
+    if (musica==true) {
       audmenu.play();
     }
-    if (sonid==false) {
+    if (musica==false) {
       audmenu.pause();
     }
     break;
@@ -111,7 +114,12 @@ void draw() {
   case 4:
     perder();
     audjuego.pause();
-    audperder.play();
+    if (efectos==true) {
+      audperder.play();
+    }
+    if (efectos==false) {
+      audperder.pause();
+    }
     break;
   }
 }

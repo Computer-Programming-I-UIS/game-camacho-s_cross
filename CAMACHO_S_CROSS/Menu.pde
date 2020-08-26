@@ -1,11 +1,14 @@
 void Sonido() {//metodo para cambiar las opciones de sonido
+  //sonido de musica
   fill(0);
-  textSize(80);
-  text("Sonido", 250, 140); 
-  if (sonid==true) {
-    image(sn1, 500, 100);//imagen para sonido activado
+  textSize(60);
+  text("Sonido", 400, 70); 
+  textSize(40);
+  text("Música", 250, 240);
+  if (musica==true) {
+    image(sn1, 400, 200);//imagen para sonido activado
   } else {
-    image(sn2, 500, 100);//imagen para sonido desactivado
+    image(sn2, 400, 200);//imagen para sonido desactivado
   }
   fill(l, 160);
   rect(10, 430, 100, 50, 5);
@@ -23,10 +26,23 @@ void Sonido() {//metodo para cambiar las opciones de sonido
   if ((mouseX>10) && (mouseX<10+100) && (mouseY>430) && (mouseY<430+50) && (mousePressed==true)) {
     opcion = 0;
   }
+  //Sonido de efectos
+  fill(0);
+  textSize(40);
+  text("Efectos", 250, 340); 
+  if (efectos==true) {
+    image(sn1, 400, 300);//imagen para sonido activado
+  } else {
+    image(sn2, 400, 300);//imagen para sonido desactivado
+  }
+
 }
 void mouseClicked() {//cambia la variable que controla el sonido
-  if ((mouseX>500) && (mouseX<500+80) && (mouseY>100) && (mouseY<100+45) ) {
-    sonid=!sonid;
+  if ((mouseX>400) && (mouseX<400+80) && (mouseY>200) && (mouseY<200+45) ) {
+    musica=!musica;
+  }
+  if ((mouseX>400) && (mouseX<400+80) && (mouseY>300) && (mouseY<300+45) ) {
+    efectos=!efectos;
   }
 }
 
