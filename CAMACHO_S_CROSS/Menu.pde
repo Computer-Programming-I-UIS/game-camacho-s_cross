@@ -226,7 +226,7 @@ void creditos() { //Créditos
   textSize(25);
   text("A continuación se refieren los derechos de autor de algunas imagenes utilizadas ", 30, 250);
   text("en nuestro juego (cuyo autor es conocido), por otra parte, las imagenes con autor ", 30, 280);
-  text("desconocido se encuentran debidamente referenciadas en el código(pestaña Menu, línea 124),", 30, 310);
+  text("desconocido se encuentran debidamente referenciadas en el código(pestaña Menu, línea 200),", 30, 310);
   text("al igual que los audios.", 30, 340);
   text("Muñeco de nieve:   Cisily", 300, 360);
   text("Montañas:   Carlos A. Gatica V.", 300, 400);

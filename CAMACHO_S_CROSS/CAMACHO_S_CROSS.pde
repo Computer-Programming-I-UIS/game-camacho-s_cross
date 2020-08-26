@@ -1,6 +1,6 @@
 /* Juego Camacho´s Cross
  Creado por: Sergio Andrés Angarita Camacho  2190441
- Jesse Solomon Blair Camacho     
+             Jesse Solomon Blair Camacho     2191740
  Descripción: Juego ligeramente basado en el dinosaurio offline de Google, el motociclista deberá 
  saltar los muñecos de nieve para poder sobrevivir y asi alcanzar el mejor puntaje.
  POR FAVOR AÑADIR LA BIBLIOTECA MINIM EN CASO DE NO TENERLA (esta se usa para reproducir el audio)*/
