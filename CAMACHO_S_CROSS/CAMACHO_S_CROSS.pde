@@ -33,6 +33,11 @@ void setup() {
   audjuego = minim.loadFile("juego.wav"); //audio para la jugabilidad
   audperder = minim.loadFile("perder.wav"); //audio al perder
   audsalto = minim.loadFile("salto.wav");  //audio para el salto
+  audsalto.setGain(-20);
+  audmenu.setGain(-20);
+  audjuego.setGain(-20);
+  audperder.setGain(-15);
+  
 
   nubes =loadImage("nube3.png"); //imagen de la nube
   c = new cloud(nubes, 0);//variables para el constructor de las nubes
@@ -43,10 +48,10 @@ void setup() {
   terrenoN= loadImage("terrenonie.jpg");//imagen del terreno
   t = new terreno(terrenoN, 0);//variables para el constructor de las nubes
 
-  moto=loadImage("moto4r.png");//imagen de la moto
+  moto=loadImage("mtroja.png");//imagen de la moto
   cam = new Cam(moto, 70, 250, 170, 160);//variables para el constructor de la moto
 
-  jump=loadImage("salto.png");//imagen del salto
+  jump=loadImage("sltrojo.png");//imagen del salto
 
   cla=loadImage("clasificacion.png"); //imagen de la clasificacion del juego
 
