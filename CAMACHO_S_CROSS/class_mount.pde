@@ -19,11 +19,12 @@ class mount {//clase para las montañas
     image(montana, x, y+80, width+20, montana.height+65);
     image(montana, x2, y+80, width+60, montana.height+65);
     //condicion para que se repitan 
-    if ( x+montana.width <=  0) {
+    if ( x+montana.width <=  0 && puntaje<=8) {
       x = width;
     }
-    if (x2+montana.width <=0) {
+    if (x2+montana.width <=0 && puntaje<=8) {
       x2=width;
     }
+    println(x2+montana.width);
   }
 }

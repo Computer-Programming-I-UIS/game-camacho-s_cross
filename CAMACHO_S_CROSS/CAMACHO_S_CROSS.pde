@@ -9,6 +9,8 @@
 cloud c; //nubes
 mount m; //montañas
 terreno t;//terreno
+terreno2 t2;
+cacts cac;
 Cam cam;//personaje
 Obst ob ;//obstaculos
 import ddf.minim.*; //se importa la biblioteca minim que se usa en la parte del audio
@@ -18,7 +20,7 @@ int b=0, opcion, opc;
 int ancho, alto, control=0;
 PFont fuente; //Se añade una fuente 
 PImage menu, fondo, cla, sonido, sn1, sn2, fondo2;//imagenes de cada una de los terminos 
-PImage nubes, montana, terrenoN, obst, moto, jump;//imagenes de los objetos 
+PImage nubes, montana, terrenoN, obst,ski, moto, jump,cactus,desert,desert1;//imagenes de los objetos 
 color n1, n2, n3, l;
 color b1, b2, b3;
 boolean salto, play, musica=true, efectos=true;
@@ -47,6 +49,12 @@ void setup() {
 
   terrenoN= loadImage("terrenonie.jpg");//imagen del terreno
   t = new terreno(terrenoN, 0);//variables para el constructor de las nubes
+  
+  desert =loadImage("desierto2.png");
+  desert1 =loadImage("desierto3.png");
+  t2 = new terreno2(desert,0);
+  cactus =loadImage("cactus1.png");
+  cac = new cacts(cactus,265,150,125);
 
   moto=loadImage("mtroja.png");//imagen de la moto
   cam = new Cam(moto, 70, 250, 170, 160);//variables para el constructor de la moto
@@ -57,9 +65,11 @@ void setup() {
 
   sn1=loadImage("sn1.png");//imagen de 
   sn2=loadImage("sn2.png");//imagen de 
-
+  
+  ski=loadImage("ski.png");
   obst=loadImage("snowman_.png");//imagen del obstaculo
   ob = new Obst(obst, 280, 150, 133);//variables para el constructor de los obstaculos
+  
 
   fuente=loadFont("Harlow.vlw");  //fuente utilizada en la interfaz del juego
   textFont(fuente);
@@ -125,6 +135,15 @@ void draw() {
     if (efectos==false) {
       audperder.pause();
     }
+    break;
+     case 5:
+    ob.display();
+    t.display();
+    t2.display();
+    puntaje();
+    cam.display();
+    cac.display();
+    c.display();
     break;
   }
 }
