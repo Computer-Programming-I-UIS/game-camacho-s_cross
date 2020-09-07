@@ -25,6 +25,6 @@ class mount {//clase para las montañas
     if (x2+montana.width <=0 && puntaje<=8) {
       x2=width;
     }
-    println(x2+montana.width);
+    //println(x2+montana.width);
   }
 }

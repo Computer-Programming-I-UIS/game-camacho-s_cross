@@ -45,8 +45,8 @@ class cacts { //clase para los cactus
       //m.v+=0.1;//velocidad montaña aumenta
       v+=0.2;//velocidad obstaculo aumenta
     }
-        if(puntaje>=20 && x<=0 && x1<=0){
+        //if(puntaje>=20 && x<=0 && x1<=0){
           //t2.y=130 ;
-          opcion=6;}
+          //opcion=6;}
   }
 }

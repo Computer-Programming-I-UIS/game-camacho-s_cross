@@ -8,6 +8,7 @@
 //Se declaran las variables globales, los objetos,las imagenes, y audio
 edific e;//edificios
 carret cra;//carretera
+bosq bq;//bosque
 cloud c; //nubes
 mount m; //montañas
 terreno t;//terreno
@@ -22,7 +23,8 @@ int b=0, opcion, opc, select, cte1, cte2, cte3, cte4;
 int ancho, alto, control=0;
 PFont fuente; //Se añade una fuente 
 PImage menu, fondo, cla, sonido, sn1, sn2, fondo2;//imagenes de cada una de los terminos 
-PImage nubes, montana, terrenoN, obst, ski, moto, jump, cactus, desert, desert1, carretera, edificios, auto;//imagenes de los objetos 
+PImage nubes, montana, terrenoN, obst, ski, moto, jump, cactus, desert, desert1, carretera, edificios, auto, bosque, roca;
+;//imagenes de los objetos 
 PImage sltrojo, sltverde, sltazul, sltnegro, mtroja, mtverde, mtazul, mtnegra;
 color n1, n2, n3, l;
 color b1, b2, b3;
@@ -65,6 +67,11 @@ void setup() {
   carretera =loadImage("carretera2.jpg");
   auto=loadImage("auto1.png");
   cra = new carret(carretera, 300);
+
+  bosque =loadImage("bosque.png");
+  roca =loadImage("roca.png");
+  bq = new bosq(bosque, 90);
+
 
   moto=loadImage("moto4r.png");//imagen de la moto
   mtroja=loadImage("mtroja.png");//imagen de la moto en rojo
@@ -154,6 +161,14 @@ void draw() {
     break;
   case 6:
     cra.display();
+    c.display();
+    bq.display();
+    puntaje();
+    cam.display();
+    audjuego.play();
+    break;
+  case 7:
+    cra.display();
     t2.display();
     puntaje();
     cam.display();
@@ -161,6 +176,5 @@ void draw() {
     c.display();
     audjuego.play();
     break;
- 
   }
 }

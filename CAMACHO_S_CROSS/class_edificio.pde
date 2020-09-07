@@ -19,10 +19,10 @@ class edific {//clase para las montañas
     image(edificios, x, y,width+10,edificios.height);
     image(edificios, x2, y,width+10,edificios.height);
     //condicion para que se repitan 
-    if ( x+edificios.width <=  0) {
+    if ( x+edificios.width <=  0&& puntaje<=18) {
       x = width;
     }
-    if (x2+edificios.width <=0) {
+    if (x2+edificios.width <=0&& puntaje<=18) {
       x2=width;
     }
    // println(x2+montana.width);

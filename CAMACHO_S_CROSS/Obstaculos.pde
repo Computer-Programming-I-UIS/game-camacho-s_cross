@@ -32,7 +32,7 @@ class Obst { //clase para los obstaculos
       //x1=2*width;
     }
     //condicion para las colisiones 
-    if ((((y<=(cam.y1)+cam.alto-50 ))&& (((cam.x1 >=x+85-cam.ancho) && (cam.x1 <= (x)+cam.ancho-119)) ||((cam.x1 >=x1+55-cam.ancho) && (cam.x1 <= (x1)+cam.ancho-119))))) {
+    if ((((y<=(cam.y1)+cam.alto-50 ))&& (((cam.x1 >=x-cam.ancho+85) && (cam.x1 <= (x)+cam.ancho-119)) ||((cam.x1 >=x1-cam.ancho+50) && (cam.x1 <= (x1)+cam.ancho-119))))) {
       puntaje-=1;//puntaje disminuye
       opcion=4;//sucede el caso 4
       audjuego.pause();//audio del juego pausa
@@ -51,8 +51,8 @@ class Obst { //clase para los obstaculos
       v+=0.2;//velocidad obstaculo aumenta
     }
     if (puntaje>=10 && (m.x2+ montana.width) <= 0 && (m.x+ montana.width) <= 0 && x1<=0) { 
-    // if(puntaje>=1){
-      t.y=18;
+     //if(puntaje>=1){
+      t.y=16;
       opcion=5;
       //opcion=6;
     }

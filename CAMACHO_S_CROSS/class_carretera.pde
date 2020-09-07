@@ -4,7 +4,7 @@ class carret {//clase para el terreno
   float yc =280;
   int E =1000;
   int x=width, x2=2*width, xc=2*width, xc2=xc+E;//coordenada en x de la carretera y los carros
-  float v=23, vc=22;//velocidad
+  float v=28, vc=25;//velocidad
   
   //constructor
   carret(PImage C, float Y) {
@@ -32,7 +32,7 @@ class carret {//clase para el terreno
     if (x<=0) {
       t2.y=600;
     }
-    if ( xc+auto.width<=  0 ) {
+    if ( xc+auto.width<=  0 && puntaje<=20) {
       xc =int(random(width, width+(width/2)-xc+auto.width));
     } 
     if(xc<=0){
@@ -45,7 +45,7 @@ class carret {//clase para el terreno
       x2=width;
     }
     //condicion para las colisiones del auto 
-    if ((((yc+50<=(cam.y1)+cam.alto-30 ))&& (((cam.x1 >=xc+45-cam.ancho) && (cam.x1 <= (xc)+cam.ancho-30)) ||((cam.x1 >=xc2+50-cam.ancho) && (cam.x1 <= (xc2)+cam.ancho-30))))) {
+    if ((((yc+13<=(cam.y1)+cam.alto-30 ))&& (((cam.x1 >=xc-cam.ancho+70) && (cam.x1 <= (xc)+cam.ancho-30)) ||((cam.x1 >=xc2-cam.ancho+70) && (cam.x1 <= (xc2)+cam.ancho-30))))) {
       puntaje-=1;//puntaje disminuye
       opcion=4;//sucede el caso 4
       audjuego.pause();//audio del juego pausa
@@ -53,6 +53,10 @@ class carret {//clase para el terreno
       if (puntaje > puntaje_max) puntaje_max = puntaje;//condicion para que se guarde el mayor puntaje
       setup();//reinicia juego
     }
-   //if (puntaje>=20 && (m.x2+ montana.width) <= 0 && (m.x+ montana.width) <= 0 && x1<=0) {
+       if (puntaje>=20 && (e.x2+ edificios.width) <= 0 && (e.x+ edificios.width) <= 0 && xc2<=0) { 
+     //if(puntaje>=1){
+      y=320;
+      opcion=6;
+    }
   }
 }
