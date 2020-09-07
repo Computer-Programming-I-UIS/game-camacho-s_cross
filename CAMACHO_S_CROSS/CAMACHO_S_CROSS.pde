@@ -1,6 +1,6 @@
 /* Juego Camacho´s Cross
  Creado por: Sergio Andrés Angarita Camacho  2190441
-             Jesse Solomon Blair Camacho     2191740
+ Jesse Solomon Blair Camacho     2191740
  Descripción: Juego ligeramente basado en el dinosaurio offline de Google, el motociclista deberá 
  saltar los muñecos de nieve para poder sobrevivir y asi alcanzar el mejor puntaje.
  POR FAVOR AÑADIR LA BIBLIOTECA MINIM EN CASO DE NO TENERLA (esta se usa para reproducir el audio)*/
@@ -16,11 +16,12 @@ Obst ob ;//obstaculos
 import ddf.minim.*; //se importa la biblioteca minim que se usa en la parte del audio
 Minim minim;
 AudioPlayer audmenu, audjuego, audperder, audsalto;//nombres de los audios
-int b=0, opcion, opc;
+int b=0, opcion, opc, select, cte1, cte2, cte3, cte4;
 int ancho, alto, control=0;
 PFont fuente; //Se añade una fuente 
 PImage menu, fondo, cla, sonido, sn1, sn2, fondo2;//imagenes de cada una de los terminos 
-PImage nubes, montana, terrenoN, obst,ski, moto, jump,cactus,desert,desert1;//imagenes de los objetos 
+PImage nubes, montana, terrenoN, obst, ski, moto, jump, cactus, desert, desert1;//imagenes de los objetos 
+PImage sltrojo, sltverde, sltazul, sltnegro, mtroja, mtverde, mtazul, mtnegra;
 color n1, n2, n3, l;
 color b1, b2, b3;
 boolean salto, play, musica=true, efectos=true;
@@ -39,7 +40,7 @@ void setup() {
   audmenu.setGain(-20);
   audjuego.setGain(-20);
   audperder.setGain(-15);
-  
+
 
   nubes =loadImage("nube3.png"); //imagen de la nube
   c = new cloud(nubes, 0);//variables para el constructor de las nubes
@@ -49,27 +50,33 @@ void setup() {
 
   terrenoN= loadImage("terrenonie.jpg");//imagen del terreno
   t = new terreno(terrenoN, 0);//variables para el constructor de las nubes
-  
+
   desert =loadImage("desierto2.png");
   desert1 =loadImage("desierto3.png");
-  t2 = new terreno2(desert,0);
+  t2 = new terreno2(desert, 0);
   cactus =loadImage("cactus1.png");
-  cac = new cacts(cactus,265,150,125);
+  cac = new cacts(cactus, 265, 150, 125);
 
-  moto=loadImage("mtroja.png");//imagen de la moto
+  moto=loadImage("moto4r.png");//imagen de la moto
+  mtroja=loadImage("mtroja.png");//imagen de la moto en rojo
+  mtverde=loadImage("mtverde.png");//imagen de la moto en verde
+  mtazul=loadImage("mtazul.png");//imagen de la moto en azul
   cam = new Cam(moto, 70, 250, 170, 160);//variables para el constructor de la moto
 
-  jump=loadImage("sltrojo.png");//imagen del salto
+  sltnegro=loadImage("salto.png");//imagen del salto
+  sltrojo=loadImage("sltrojo.png");//imagen del salto en rojo
+  sltverde=loadImage("sltverde.png");//imagen del salto en verde
+  sltazul=loadImage("sltazul.png");//imagen del salto en azul
 
   cla=loadImage("clasificacion.png"); //imagen de la clasificacion del juego
 
   sn1=loadImage("sn1.png");//imagen de 
   sn2=loadImage("sn2.png");//imagen de 
-  
+
   ski=loadImage("ski.png");
   obst=loadImage("snowman_.png");//imagen del obstaculo
   ob = new Obst(obst, 280, 150, 133);//variables para el constructor de los obstaculos
-  
+
 
   fuente=loadFont("Harlow.vlw");  //fuente utilizada en la interfaz del juego
   textFont(fuente);
@@ -99,17 +106,7 @@ void draw() {
     break;
     //jugabilidad
   case 1:
-    c.display();
-    m.display();
-    t.display();
-    cam.display();
-    ob.display();
-    puntaje();
-    audjuego.play();
-    audmenu.pause();
-    if(musica==false){
-      audjuego.pause();
-    }
+    seleccion();
     break;
     //opciones de sonido
   case 2:
@@ -136,7 +133,7 @@ void draw() {
       audperder.pause();
     }
     break;
-     case 5:
+  case 5:
     ob.display();
     t.display();
     t2.display();
