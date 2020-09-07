@@ -28,7 +28,7 @@ class Obst { //clase para los obstaculos
       x =int(random(width, 2*width));
       //x=2*width;
     } else if (x1+ancho <=0 && puntaje<=8) {
-      x1=int(random(width,2*width));
+      x1=int(random(width, 2*width));
       //x1=2*width;
     }
     //condicion para las colisiones 
@@ -40,18 +40,21 @@ class Obst { //clase para los obstaculos
       if (puntaje > puntaje_max) puntaje_max = puntaje;//condicion para que se guarde el mayor puntaje
       setup();//reinicia juego
     }
-    if (x1>=x && x1<=x+ancho-50){
-       x1=2*width;}
+    if (x1>=x && x1<=x+ancho-50) {
+      x1=2*width;
+    }
     //condicion para que aumente la velocidad cada vez que el puntaje sea de 10 en 10
     if ( puntaje %10 == 0 && puntaje != 0) {
       c.v+=0.3; //velocidad nube aumenta
-     t.v+=0.3;//velocidad terreno aumenta
+      t.v+=0.3;//velocidad terreno aumenta
       m.v+=0.1;//velocidad montaña aumenta
       v+=0.2;//velocidad obstaculo aumenta
     }
     if (puntaje>=10 && (m.x2+ montana.width) <= 0 && (m.x+ montana.width) <= 0 && x1<=0) { 
-
+    // if(puntaje>=1){
+      t.y=18;
       opcion=5;
+      //opcion=6;
     }
   }
 }

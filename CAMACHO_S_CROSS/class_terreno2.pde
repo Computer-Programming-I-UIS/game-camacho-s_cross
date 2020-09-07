@@ -21,8 +21,8 @@ class terreno2 {//clase para el terreno
     //condicion para que se repitan 
     if ( (x+desert.width-100)/2 <=  0) {
       x = width;}
-      if(x<=0){
-      terrenoN.height=0;}
+      //if(x<=0){
+      //terrenoN.height=0;}
     
     if (x2+desert1.width-100 <=0) {
       x2=width;

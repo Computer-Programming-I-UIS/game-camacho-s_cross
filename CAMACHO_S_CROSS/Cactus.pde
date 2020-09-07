@@ -3,7 +3,7 @@ class cacts { //clase para los cactus
   PImage cactus; //variable de imagen de cactus
   int  y;//coordenada y
   int E =1000;//espacio entre la posicion inicial de los cactus
-  int x = 3*width;//coordenada x del primer cactus
+  int x = 2*width;//coordenada x del primer cactus
   int x1 = x+E;//coordenada x del segundo cactus
   float v =24;//velocidad de los cactus
   int ancho, alto;//ancho y alto de cactus
@@ -24,9 +24,9 @@ class cacts { //clase para los cactus
     image(cactus, x, y, ancho, alto);  
     image(cactus, x1, y, ancho, alto);
     //condicion para que se repitan los cactus cuando llegan a cero en posiciones random
-    if ( x+ancho<=  0) {
+    if ( x+ancho<=  0 && puntaje <=20) {
       x =int(random(width, 2*width));
-    } else if (x1+ancho <=0) {
+    } else if (x1+ancho <=0 && puntaje <=20) {
       x1=int(random(width, 2*width));
     }
     //condicion para las colisiones 
@@ -45,5 +45,8 @@ class cacts { //clase para los cactus
       //m.v+=0.1;//velocidad montaña aumenta
       v+=0.2;//velocidad obstaculo aumenta
     }
-      }
+        if(puntaje>=20 && x<=0 && x1<=0){
+          //t2.y=130 ;
+          opcion=6;}
   }
+}
