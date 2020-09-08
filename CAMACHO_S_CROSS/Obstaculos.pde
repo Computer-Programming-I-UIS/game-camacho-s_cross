@@ -5,7 +5,7 @@ class Obst { //clase para los obstaculos
   int E =1000;//espacio entre la posicion inicial de los obbstaculos
   int x = width;//coordenada x del primer obstaculo
   int x1 = width+E;//coordenada x del segundo obstaculo
-  float v =17;//velocidad de los obstaculos
+  float v =25,v1=25;//velocidad de los obstaculos
   int ancho, alto;//ancho y alto de obstaculos
 
   //constructor
@@ -19,16 +19,16 @@ class Obst { //clase para los obstaculos
   void display() {
     //direccion movimiento de obstaculos
     x -= v; 
-    x1 -=v+8;
+    x1 -=v1;
     //dibujar los obstaculos
     image(obst, x, y, ancho, alto);  
     image(ski, x1, y+10, ancho, alto-30);
     //condicion para que se repitan los obstaculos cuando llegan a cero en posiciones random
-    if ( x+ancho<=  0 && puntaje<=10) {
-      x =int(random(width, 2*width));
+    if ( x+ancho<=  0 && puntaje<1) {
+      x =int(random(width, width+(width/2)-ob.ancho));
       //x=2*width;
-    } else if (x1+ancho <=0 && puntaje<=8) {
-      x1=int(random(width, 2*width));
+    } else if (x1+ancho <=0 && puntaje<=1) {
+      x1=int(random(width+(width/2), 2*width));
       //x1=2*width;
     }
     //condicion para las colisiones 
@@ -41,16 +41,17 @@ class Obst { //clase para los obstaculos
       setup();//reinicia juego
     }
     if (x1>=x && x1<=x+ancho-50) {
-      x1=2*width;
+      v1=v;}
+      else{
+        v1=25;
     }
     //condicion para que aumente la velocidad cada vez que el puntaje sea de 10 en 10
-    if ( puntaje %10 == 0 && puntaje != 0) {
-      c.v+=0.3; //velocidad nube aumenta
-      t.v+=0.3;//velocidad terreno aumenta
+    if ( puntaje %5 == 0 && puntaje != 0) {
+      c.v+=0.2; //velocidad nube aumenta
+      t.v+=0.2;//velocidad terreno aumenta
       m.v+=0.1;//velocidad montaña aumenta
-      v+=0.2;//velocidad obstaculo aumenta
     }
-    if (puntaje>=10 && (m.x2+ montana.width) <= 0 && (m.x+ montana.width) <= 0 && x1<=0) { 
+    if (puntaje>=2 && (m.x2+ montana.width) <= 0 && (m.x+ montana.width) <= 0 && x1<=0 && x<=0) { 
      //if(puntaje>=1){
       t.y=16;
       opcion=5;

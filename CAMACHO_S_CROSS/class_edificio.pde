@@ -2,7 +2,7 @@ class edific {//clase para las montañas
   //atributos
   float y; //coordenada en y
   int x=width, x2=2*width;//coordenada en x
-  float v=20;//velocidad
+  float v=25;//velocidad
 
   //constructor
   edific(PImage ED, float Y) {
@@ -19,12 +19,12 @@ class edific {//clase para las montañas
     image(edificios, x, y,width+10,edificios.height);
     image(edificios, x2, y,width+10,edificios.height);
     //condicion para que se repitan 
-    if ( x+edificios.width <=  0&& puntaje<=18) {
-      x = width;
-    }
-    if (x2+edificios.width <=0&& puntaje<=18) {
-      x2=width;
-    }
+    //if ( x+edificios.width <=  0&& puntaje<=18) {
+    //  x = width;
+    //}
+    //if (x2+edificios.width <=0&& puntaje<=18) {
+    //  x2=width;
+    //}
    // println(x2+montana.width);
   }
 }

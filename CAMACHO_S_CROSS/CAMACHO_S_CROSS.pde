@@ -150,6 +150,7 @@ void draw() {
     }
     break;
   case 5:
+
     ob.display();
     t.display();
     c.display();
@@ -168,12 +169,12 @@ void draw() {
     audjuego.play();
     break;
   case 7:
-    cra.display();
+    bq.display();
+    c.display();
     t2.display();
     puntaje();
     cam.display();
     cac.display();
-    c.display();
     audjuego.play();
     break;
   }

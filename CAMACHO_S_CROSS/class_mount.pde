@@ -2,7 +2,7 @@ class mount {//clase para las montañas
   //atributos
   float y; //coordenada en y
   int x=0, x2=width;//coordenada en x
-  float v=5;//velocidad
+  float v=25;//velocidad
 
   //constructor
   mount(PImage M, float Y) {
@@ -19,12 +19,12 @@ class mount {//clase para las montañas
     image(montana, x, y+80, width+20, montana.height+65);
     image(montana, x2, y+80, width+60, montana.height+65);
     //condicion para que se repitan 
-    if ( x+montana.width <=  0 && puntaje<=8) {
-      x = width;
-    }
-    if (x2+montana.width <=0 && puntaje<=8) {
-      x2=width;
-    }
-    //println(x2+montana.width);
+  //  if ( x+montana.width <=  0 && puntaje<=7) {
+  //    x = width;
+  //  }
+  //  if (x2+montana.width <=0 && puntaje<=7) {
+  //    x2=width;
+  //  }
+  //  //println(x2+montana.width);
   }
 }

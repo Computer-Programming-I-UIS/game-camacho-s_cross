@@ -4,7 +4,7 @@ class bosq {//clase para el terreno
   float yr =280;
   int E =1000;
   int x=width, x2=2*width, xr=2*width, xr2=xr+E;//coordenada en x de la carretera y los carros
-  float v=23, vr=22;//velocidad
+  float v=34, vr=34;//velocidad
   
   //constructor
   bosq(PImage B, float Y) {
@@ -30,18 +30,18 @@ class bosq {//clase para el terreno
       x = width;
     }
     
-    if (x2+bosque.width+345<=0) {
+    if (x2+bosque.width+345<=0 ) {
       x2=width;
     }
-    if (x<=0) {
-      cra.y=600;
-    }
-    if ( xr+roca.width<=  0 ) {
+    //if (x<=0) {
+    //  cra.y=600;
+    //}
+    if ( xr+roca.width<=  0 && puntaje <=3) {
       xr =int(random(width, width+(width/2)-xr+roca.width));
     } 
     //if(xr<=0){
     //  terrenoN.height=0;}
-    else if (xr2+roca.width <=0) {
+    else if (xr2+roca.width <=0 && puntaje <=3) {
       xr2=int(random(width+(width/2), 2*width));
     }
 
@@ -54,7 +54,10 @@ class bosq {//clase para el terreno
       if (puntaje > puntaje_max) puntaje_max = puntaje;//condicion para que se guarde el mayor puntaje
       setup();//reinicia juego
     }
-   //if (puntaje>=20 && (m.x2+ montana.width) <= 0 && (m.x+ montana.width) <= 0 && x1<=0) {
-     println(yr);
+       if(puntaje>=4 && xr<=0 && xr2<=0){
+     //if(puntaje>=1){
+      //y=320;
+      opcion=7;
+    }
   }
 }
