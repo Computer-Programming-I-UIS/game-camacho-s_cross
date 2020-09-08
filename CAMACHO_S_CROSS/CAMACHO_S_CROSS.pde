@@ -65,7 +65,7 @@ void setup() {
   e = new edific(edificios, 70);
 
   carretera =loadImage("carretera2.jpg");
-  auto=loadImage("auto1.png");
+  auto=loadImage("auto.png");
   cra = new carret(carretera, 300);
 
   bosque =loadImage("bosque.png");

@@ -19,7 +19,7 @@ class bosq {//clase para el terreno
     x2-=v;
     xr-=vr;
     xr2-=vr;
-    //dibujan el terrenoy auto
+    //dibujan el terreno y auto
     image(bosque, x, y,width+100,bosque.height+160);
     image(bosque, x2, y,width+100,bosque.height+160);
     image(roca,xr,272);

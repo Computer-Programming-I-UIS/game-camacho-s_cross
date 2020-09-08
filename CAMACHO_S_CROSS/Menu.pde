@@ -170,7 +170,7 @@ void ayuda() { //ejecuta la ayuda, una breve explicaión interactiva de los cont
   //sprite para andar
   if (control==1 && cam.y1<=250) { 
     //Sprites
-    image(jump, 400, cam.y1);
+    image(sltnegro, 400, cam.y1);
     delay(5);
 
     //Salto
