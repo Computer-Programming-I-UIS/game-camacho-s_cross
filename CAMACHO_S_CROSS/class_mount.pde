@@ -2,7 +2,7 @@ class mount {//clase para las montañas
   //atributos
   float y; //coordenada en y
   int x=0, x2=width;//coordenada en x
-  float v=25;//velocidad
+  float v=17;//velocidad
 
   //constructor
   mount(PImage M, float Y) {

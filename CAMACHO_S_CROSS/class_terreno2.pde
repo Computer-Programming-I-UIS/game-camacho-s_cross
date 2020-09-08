@@ -1,7 +1,7 @@
 class terreno2 {//clase para el terreno
   float y; //coordenada en y
   int x=width, x2=2*width;//coordenada en x
-  float v=32;//velocidad
+  float v=23;//velocidad
 
   //constructor
   terreno2(PImage D, float Y) {

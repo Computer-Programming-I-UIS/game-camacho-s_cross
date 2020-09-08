@@ -5,7 +5,7 @@ class Obst { //clase para los obstaculos
   int E =1000;//espacio entre la posicion inicial de los obbstaculos
   int x = width;//coordenada x del primer obstaculo
   int x1 = width+E;//coordenada x del segundo obstaculo
-  float v =25,v1=25;//velocidad de los obstaculos
+  float v =17,v1=25;//velocidad de los obstaculos
   int ancho, alto;//ancho y alto de obstaculos
 
   //constructor

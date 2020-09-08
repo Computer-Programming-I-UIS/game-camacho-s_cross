@@ -4,7 +4,7 @@ class bosq {//clase para el terreno
   float yr =280;
   int E =1000;
   int x=width, x2=2*width, xr=2*width, xr2=xr+E;//coordenada en x de la carretera y los carros
-  float v=34, vr=34;//velocidad
+  float v=23, vr=21;//velocidad
   
   //constructor
   bosq(PImage B, float Y) {

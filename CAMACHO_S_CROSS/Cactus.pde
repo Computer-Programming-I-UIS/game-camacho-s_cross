@@ -5,7 +5,7 @@ class cacts { //clase para los cactus
   int E =1000;//espacio entre la posicion inicial de los cactus
   int x = 2*width;//coordenada x del primer cactus
   int x1 = x+E;//coordenada x del segundo cactus
-  float v =34;//velocidad de los cactus
+  float v =26;//velocidad de los cactus
   int ancho, alto;//ancho y alto de cactus
 
   //constructor

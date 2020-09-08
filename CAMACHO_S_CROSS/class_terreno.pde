@@ -3,7 +3,7 @@ class terreno {//clase para el terreno
   //atributos
   float y; //coordenada en y
   int x=0, x2=width;//coordenada en x
-  float v=8;//velocidad
+  float v=13;//velocidad
 
 
   //constructor

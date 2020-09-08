@@ -4,7 +4,7 @@ class carret {//clase para el terreno
   float yc =280;
   int E =1000;
   int x=width, x2=2*width, xc=2*width, xc2=xc+E;//coordenada en x de la carretera y los carros
-  float v=30, vc=30;//velocidad
+  float v=20, vc=25;//velocidad
   
   //constructor
   carret(PImage C, float Y) {

@@ -2,7 +2,7 @@ class edific {//clase para las montañas
   //atributos
   float y; //coordenada en y
   int x=width, x2=2*width;//coordenada en x
-  float v=25;//velocidad
+  float v=20;//velocidad
 
   //constructor
   edific(PImage ED, float Y) {
