@@ -187,7 +187,7 @@ void ayuda() { //ejecuta la ayuda, una breve explicaión interactiva de los cont
       cam.y1=250;
       control=0;
     }
-    copy(moto, cam.x, cam.y, cam.ancho, cam.alto, 400, cam.y1, cam.ancho, cam.alto);//cargar el sprite
+    copy(mtnegra, cam.x, cam.y, cam.ancho, cam.alto, 400, cam.y1, cam.ancho, cam.alto);//cargar el sprite
     cam.count++;
     delay(40);
     if (cam.count==3) {

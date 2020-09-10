@@ -20,10 +20,10 @@ import ddf.minim.*; //se importa la biblioteca minim que se usa en la parte del 
 Minim minim;
 AudioPlayer audmenu, audjuego, audperder, audsalto;//nombres de los audios
 int b=0, opcion, opc, select, cte1, cte2, cte3, cte4;
-int ancho, alto, control=0;
+int ancho, alto, control=0, slt, img;
 PFont fuente; //Se añade una fuente 
 PImage menu, fondo, cla, sonido, sn1, sn2, fondo2;//imagenes de cada una de los terminos 
-PImage nubes, montana, terrenoN, obst, ski, moto, jump, cactus, desert, desert1, carretera, edificios, auto, bosque, roca;
+PImage nubes, montana, terrenoN, obst, ski, jump, cactus, desert, desert1, carretera, edificios, auto, bosque, roca;
 ;//imagenes de los objetos 
 PImage sltrojo, sltverde, sltazul, sltnegro, mtroja, mtverde, mtazul, mtnegra;
 color n1, n2, n3, l;
@@ -73,11 +73,11 @@ void setup() {
   bq = new bosq(bosque, 90);
 
 
-  moto=loadImage("moto4r.png");//imagen de la moto
+  mtnegra=loadImage("moto4r.png");//imagen de la moto
   mtroja=loadImage("mtroja.png");//imagen de la moto en rojo
   mtverde=loadImage("mtverde.png");//imagen de la moto en verde
   mtazul=loadImage("mtazul.png");//imagen de la moto en azul
-  cam = new Cam(moto, 70, 250, 170, 160);//variables para el constructor de la moto
+  cam = new Cam(70, 250, 170, 160);//variables para el constructor de la moto
 
   sltnegro=loadImage("salto.png");//imagen del salto
   sltrojo=loadImage("sltrojo.png");//imagen del salto en rojo

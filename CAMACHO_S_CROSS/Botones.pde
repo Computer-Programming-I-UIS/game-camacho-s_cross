@@ -20,6 +20,7 @@ void Start() {      //metodo para empezar a jugar
   }
   if ((mouseX>650)& (mouseX<900) && (mouseY>135) && (mouseY<205) && (mousePressed==true)) {
     opcion = 1;
+    delay(300);
   }
 }
 void sonido() {  //metodo para entrar en las opciones de sonido

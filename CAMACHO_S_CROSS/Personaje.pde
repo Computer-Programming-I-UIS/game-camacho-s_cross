@@ -1,12 +1,9 @@
 class Cam {//clase para la moto
   //atributos
-  PImage moto;
-  //
   int ancho=170, alto=160, x, y, x1, y1, count, salto=10;
 
   //constructor
-  Cam(PImage _moto, int _x1, int _y1, int _ancho, int _alto) {
-    moto=_moto;
+  Cam(int _x1, int _y1, int _ancho, int _alto) {
     x1=_x1; 
     y1=_y1;
     ancho=_ancho;
@@ -45,7 +42,21 @@ class Cam {//clase para la moto
     //sprite para andar
     if (control==1 && y1<=250) { 
       //Sprites
+      switch(slt) {
+      case 0:
       image(sltrojo, x1, y1);
+      break;
+      case 1:
+      image(sltverde, x1, y1);
+      break;
+      case 2:
+      image(sltazul, x1, y1);
+      break;
+      case 3:
+      image(sltnegro, x1, y1);
+      break;
+      }
+      
       delay(5);
       //Salto
       y1-=salto;
@@ -61,7 +72,20 @@ class Cam {//clase para la moto
         y1=250;
         control=0;
       }
+      switch(img) {
+      case 0:
       copy(mtroja, x, y, ancho, alto, x1, y1, ancho, alto);
+      break;
+      case 1:
+      copy(mtverde, x, y, ancho, alto, x1, y1, ancho, alto);
+      break;
+      case 2:
+      copy(mtazul, x, y, ancho, alto, x1, y1, ancho, alto);
+      break;
+      case 3:
+      copy(mtnegra, x, y, ancho, alto, x1, y1, ancho, alto);
+      break;
+      }
       count++;
       delay(40);
       if (count==3) {
@@ -112,38 +136,54 @@ void seleccion() {  //Selección del personaje
       cte4=10;
     }
     if ((mouseX>100) && (mouseX<100+170) && (mouseY>150) && (mouseY<150+160) && (mousePressed==true)) {
-
+      slt=0;
+      img=0;
+      select = 1;
+    }
+    if ((mouseX>300) && (mouseX<300+170) && (mouseY>150) && (mouseY<150+160) && (mousePressed==true)) {
+      slt=1;
+      img=1;
+      select = 1;
+    }
+    if ((mouseX>500) && (mouseX<500+170) && (mouseY>150) && (mouseY<150+160) && (mousePressed==true)) {
+      slt=2;
+      img=2;
+      select = 1;
+    }
+    if ((mouseX>700) && (mouseX<700+170) && (mouseY>150) && (mouseY<150+160) && (mousePressed==true)) {
+      slt=3;
+      img=3;
       select = 1;
     }
     //al hacer click el color de los botones se invierte y regresa a la pestaña anterior
-  if ((mouseX>10) && (mouseX<10+100) && (mouseY>430) && (mouseY<430+50)) {
-    l=255;
-    n2=0;
-  } else {
-    l=0;
-    n2=255;
-  }
-  if ((mouseX>10) && (mouseX<10+100) && (mouseY>430) && (mouseY<430+50) && (mousePressed==true)) {
-    opc = 0;
-    delay(150);
-  }
-  fill(l, 160);
-  rect(10, 430, 100, 50, 5);
-  fill(n2);
-  textSize(30);
-  text("Atrás", 25, 465);
-  //al hacer click el color de los botones se invierte y regresa a la pestaña anterior
-  if ((mouseX>10) && (mouseX<10+100) && (mouseY>430) && (mouseY<430+50)) {
-    l=255;
-    n2=0;
-  } else {
-    l=0;
-    n2=255;
-  }
-  if ((mouseX>10) && (mouseX<10+100) && (mouseY>430) && (mouseY<430+50) && (mousePressed==true)) {
-    opcion = 0;
-    delay(150);
-  }
+    if ((mouseX>10) && (mouseX<10+100) && (mouseY>430) && (mouseY<430+50)) {
+      l=255;
+      n2=0;
+    } else {
+      l=0;
+      n2=255;
+    }
+    if ((mouseX>10) && (mouseX<10+100) && (mouseY>430) && (mouseY<430+50) && (mousePressed==true)) {
+      opc = 0;
+      delay(150);
+    }
+    fill(l, 160);
+    rect(10, 430, 100, 50, 5);
+    fill(n2);
+    textSize(30);
+    text("Atrás", 25, 465);
+    //al hacer click el color de los botones se invierte y regresa a la pestaña anterior
+    if ((mouseX>10) && (mouseX<10+100) && (mouseY>430) && (mouseY<430+50)) {
+      l=255;
+      n2=0;
+    } else {
+      l=0;
+      n2=255;
+    }
+    if ((mouseX>10) && (mouseX<10+100) && (mouseY>430) && (mouseY<430+50) && (mousePressed==true)) {
+      opcion = 0;
+      delay(150);
+    }
     break;
   case 1:
     c.display();
