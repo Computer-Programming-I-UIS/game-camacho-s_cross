@@ -24,10 +24,10 @@ class Obst { //clase para los obstaculos
     image(obst, x, y, ancho, alto);  
     image(ski, x1, y+10, ancho, alto-30);
     //condicion para que se repitan los obstaculos cuando llegan a cero en posiciones random
-    if ( x+ancho<=  0 && puntaje<1) {
+    if ( x+ancho<=  0 && puntaje<9) {
       x =int(random(width, width+(width/2)-ob.ancho));
       //x=2*width;
-    } else if (x1+ancho <=0 && puntaje<=1) {
+    } else if (x1+ancho <=0 && puntaje<=8) {
       x1=int(random(width+(width/2), 2*width));
       //x1=2*width;
     }
@@ -51,7 +51,7 @@ class Obst { //clase para los obstaculos
       t.v+=0.2;//velocidad terreno aumenta
       m.v+=0.1;//velocidad montaña aumenta
     }
-    if (puntaje>=2 && (m.x2+ montana.width) <= 0 && (m.x+ montana.width) <= 0 && x1<=0 && x<=0) { 
+    if (puntaje>=9 && (m.x2+ montana.width) <= 0 && (m.x+ montana.width) <= 0 && x1<=0 && x<=0) { 
      //if(puntaje>=1){
       t.y=16;
       opcion=5;

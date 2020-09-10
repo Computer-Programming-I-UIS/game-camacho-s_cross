@@ -36,12 +36,12 @@ class bosq {//clase para el terreno
     //if (x<=0) {
     //  cra.y=600;
     //}
-    if ( xr+roca.width<=  0 && puntaje <=3) {
+    if ( xr+roca.width<=  0 && puntaje <=29) {
       xr =int(random(width, width+(width/2)-xr+roca.width));
     } 
     //if(xr<=0){
     //  terrenoN.height=0;}
-    else if (xr2+roca.width <=0 && puntaje <=3) {
+    else if (xr2+roca.width <=0 && puntaje <=28) {
       xr2=int(random(width+(width/2), 2*width));
     }
 
@@ -54,7 +54,7 @@ class bosq {//clase para el terreno
       if (puntaje > puntaje_max) puntaje_max = puntaje;//condicion para que se guarde el mayor puntaje
       setup();//reinicia juego
     }
-       if(puntaje>=4 && xr<=0 && xr2<=0){
+       if(puntaje>=29 && xr<=0 && xr2<=0){
      //if(puntaje>=1){
       //y=320;
       opcion=7;
