@@ -3,7 +3,7 @@ CAMACROSS
 🏁🏆🥇🏁
 Acompaña a Camacross en su aventura por diferentes escenarios.
 
-![./BannerCamacross.png](BannerCamacross.png)
+![./BannerCamacross.png](./BannerCamacross.png)
 
 
 ![./Demo1.png](./Demo1.png)
