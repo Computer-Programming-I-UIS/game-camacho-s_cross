@@ -9,15 +9,15 @@ Acompaña a Camacross en su aventura por diferentes escenarios.
 ![./Demo1.png](./Demo1.png)
 
 Puedes elegir al personaje con tu color favorito.
-![./Demo6.png](./Demo6.png)
+![./demo6.png](./demo6.png)
 
 Una aventura sin fin que se va complicando a medida que Camacross avanza en su travesía.
 Disfrutando de los diferentes escenarios y obstáculos.
 
 ![./Demo2.png](./Demo2.png)
-![./Demo3.png](./Demo3.png)
-![./Demo4.png](./Demo4.png)
-![./Demo5.png](./Demo5.png)
+![./demo3.png](./demo3.png)
+![./demo4.png](./demo4.png)
+![./demo5.png](./demo5.png)
 
 `Camacross` es un **proyecto privado colaborativo** creado por:
  
